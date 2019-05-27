@@ -9,20 +9,34 @@ class App extends React.Component{
   // we made it a class so we can keep track of 'state'
 
   state = {
-    friendList: friends
-  }
+    friendList: friends,
+    clickedFriends,
+    score
+  };
 
-  // create method to delete friend from friendlist
-  handleRemoveFriend = (friendID) => {
-    //create new friendList using.filter()
-    const newFriendList= this.state.friendList.filter(friend => {
-      return friend.id !== friendID
-    });
+setClicked = event => {
+const currentFriends = this.state.alt;
+const FriendsAlreadyClicked =
+this.state.clickedFriends.indexOf(currentFriends) > -1;
 
+
+
+
+
+}
+
+
+
+
+
+
+  shuffleCards = () => {
+    const shuffledFriendList = this.state.friendList.sort(() => 0.5 - Math.random());
+  
     this.setState({
-      friendList: newFriendList
+      friendList: shuffledFriendList
     });
-  }
+  };
 
 render () {
   return (
@@ -37,7 +51,7 @@ render () {
         image={friend.image}
         occupation={friend.occupation}
         location={friend.location}
-        handleRemoveFriend={this.handleRemoveFriend}
+        shuffleCards={this.shuffleCards}
         />
         )
     }
