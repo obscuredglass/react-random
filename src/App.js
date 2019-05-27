@@ -28,7 +28,7 @@ render () {
   return (
     <Wrapper>
       <h1 className="title">Friends List</h1>
-
+    {
       this.state.friendList.map(friend =>
         <FriendCard
         key={friend.id}
