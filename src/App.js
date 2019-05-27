@@ -19,7 +19,30 @@ const currentFriends = this.state.alt;
 const FriendsAlreadyClicked =
 this.state.clickedFriends.indexOf(currentFriends) > -1;
 
+if (FriendsAlreadyClicked) {
+  this.setState({
+    friends: this.state.friendList.sort(function(a, b) {
+      return 0.5 - Math.random();
+    }),
+    clickedFriends: [],
+    score: 0
+  });
+  alert("You have lost the game. Dare you play again?")
+}
 
+else  {
+  this.setState(
+    {
+      friendList: this.state.friendList.sort(function(a, b){
+        return 0.5 - Math.random();
+      }),
+      clickedFriends: this.state.clickedFriends.concat(
+        currentFriends
+      ),
+      score: this.state.score + 1
+    }
+  )
+}
 
 
 
