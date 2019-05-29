@@ -1,7 +1,9 @@
 import React from "react";
 import FriendCard from "./components/FriendCard";
+import Navbar from "./components/Navbar";
+import Jumbotron from "./components/Jumbotron";
 import Wrapper from "./components/Wrapper";
-import friends from "./friends.json";
+import friends from "./aqua.json";
 import "./App.css";
 
 
@@ -9,7 +11,7 @@ class App extends React.Component {
   // we made it a class so we can keep track of 'state'
 
   state = {
-    friends,
+    friendList: friends,
     clickedFriends: [],
     score: 0
   };
@@ -21,7 +23,7 @@ class App extends React.Component {
 
     if (FriendsAlreadyClicked) {
       this.setState({
-        friends: this.state.friends.sort(function (a, b) {
+        friendList: this.state.friendList.sort(function (a, b) {
           return 0.5 - Math.random();
         }),
         clickedFriends: [],
@@ -33,7 +35,7 @@ class App extends React.Component {
     else {
       this.setState(
         {
-          friends: this.state.friends.sort(function (a, b) {
+          friendList: this.state.friendList.sort(function (a, b) {
             return 0.5 - Math.random();
           }),
           clickedFriends: this.state.clickedFriends.concat(
@@ -46,7 +48,7 @@ class App extends React.Component {
           if (this.state.score === 12) {
             alert("Woohoo! You've Won! Now you can rememeber everything!");
             this.setState({
-              friends: this.state.friends.sort(function (a, b) {
+              friendList: this.state.friendList.sort(function (a, b) {
                 return 0.5 - Math.random();
               }),
               clickedFriends: [],
@@ -73,28 +75,23 @@ class App extends React.Component {
 
   render() {
     return (
-      <Wrapper>
-        <Navbar
+      <div>
+        <Navbar 
           score={this.state.score}
         />
-        <h1 className="title">Friends List</h1>
-        {
-          this.state.friends.map(friends =>
+        <Jumbotron />
+        <div className="wrapper">
+          {this.state.friendList.map(friendList => (
             <FriendCard
-              key={friends.id}
+              imageClick={friends.imageClick}
               id={friends.id}
-              name={friends.name}
+              key={friends.id}
               image={friends.image}
-              occupation={friends.occupation}
-              location={friends.location}
-              // shuffleCards={this.shuffleCards}
             />
-          )
-        }
-
-      </Wrapper>
+          ))}
+        </div>
+      </div>
     );
   }
 }
-
 export default App;

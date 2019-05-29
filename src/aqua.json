@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "image": "carl.jpg"
+  },
+  {
+    "id": 2,
+    "image": "cyberneticghost.jpg"    
+  },
+  {
+    "id": 3,
+    "image": "drWeird.jpg"
+  },
+  {
+    "id": 4,
+    "image": "emory.jpg" 
+  },
+  {
+    "id": 5,
+    "image": "frylock.jpg"
+  },
+  {
+    "id": 6,
+    "image": "mastershake.jpg"
+  },
+  {
+    "id": 7,
+    "image": "meatwad.jpg"
+  },
+  {
+    "id": 8,
+    "image": "mooninites.jpg"
+  },
+  {
+    "id": 9,
+    "image": "mothmonsterman.jpg"
+  },
+  {
+    "id": 10,
+    "image": "oglethorpe.jpg"
+  },
+  {
+    "id": 11,
+    "image": "steve.jpg"
+  },
+  {
+    "id": 12,
+    "image": "travis.jpg"
+  }
+]
