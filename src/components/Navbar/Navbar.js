@@ -5,11 +5,11 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-default navbar-fixed-top">
-         <ul>
-          <li className="itemLeft">Test Your Memory</li>
-          <li className="itemCenter"></li>
-          <li className="itemRight">Score: {this.props.score}</li>
-        </ul>
+       
+          <p className="itemLeft">Test Your Memory</p>
+          <p className="itemCenter"></p>
+          <p className="itemRight">Score: {this.props.score}</p>
+       
       </nav>
     );
   }
