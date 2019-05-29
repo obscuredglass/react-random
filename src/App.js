@@ -2,16 +2,14 @@ import React from "react";
 import FriendCard from "./components/FriendCard";
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
-import Wrapper from "./components/Wrapper";
 import friends from "./aqua.json";
 import "./App.css";
 
 
 class App extends React.Component {
-  // we made it a class so we can keep track of 'state'
 
   state = {
-    friendList: friends,
+    friends,
     clickedFriends: [],
     score: 0
   };
@@ -23,7 +21,7 @@ class App extends React.Component {
 
     if (FriendsAlreadyClicked) {
       this.setState({
-        friendList: this.state.friendList.sort(function (a, b) {
+        friends: this.state.friends.sort(function (a, b) {
           return 0.5 - Math.random();
         }),
         clickedFriends: [],
@@ -35,7 +33,7 @@ class App extends React.Component {
     else {
       this.setState(
         {
-          friendList: this.state.friendList.sort(function (a, b) {
+          friends: this.state.friends.sort(function (a, b) {
             return 0.5 - Math.random();
           }),
           clickedFriends: this.state.clickedFriends.concat(
@@ -48,7 +46,7 @@ class App extends React.Component {
           if (this.state.score === 12) {
             alert("Woohoo! You've Won! Now you can rememeber everything!");
             this.setState({
-              friendList: this.state.friendList.sort(function (a, b) {
+              friends: this.state.friends.sort(function (a, b) {
                 return 0.5 - Math.random();
               }),
               clickedFriends: [],
@@ -60,30 +58,17 @@ class App extends React.Component {
     }
   };
 
-
-
-
-
-
-  // shuffleCards = () => {
-  //   const shuffledFriendList = this.state.friendList.sort(() => 0.5 - Math.random());
-
-  //   this.setState({
-  //     friendList: shuffledFriendList
-  //   });
-  // };
-
   render() {
     return (
       <div>
-        <Navbar 
+        <Navbar
           score={this.state.score}
         />
         <Jumbotron />
         <div className="wrapper">
-          {this.state.friendList.map(friendList => (
+          {this.state.friends.map(friends => (
             <FriendCard
-              imageClick={friends.imageClick}
+              setClicked={friends.setClicked}
               id={friends.id}
               key={friends.id}
               image={friends.image}
