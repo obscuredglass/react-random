@@ -1,50 +1,62 @@
 [
   {
     "id": 1,
-    "image": "carl.jpg"
+    "image": "carl.jpg",
+    "clicked": false
   },
   {
     "id": 2,
-    "image": "cyberneticghost.jpg"    
+    "image": "cyberneticghost.jpg",
+    "clicked": false    
   },
   {
     "id": 3,
-    "image": "drWeird.jpg"
+    "image": "drWeird.jpg",
+    "clicked": false
   },
   {
     "id": 4,
-    "image": "emory.jpg" 
+    "image": "emory.jpg",
+    "clicked": false 
   },
   {
     "id": 5,
-    "image": "frylock.jpg"
+    "image": "frylock.jpg",
+    "clicked": false
   },
   {
     "id": 6,
-    "image": "mastershake.jpg"
+    "image": "mastershake.jpg",
+    "clicked": false
   },
   {
     "id": 7,
-    "image": "meatwad.jpg"
+    "image": "meatwad.jpg",
+    "clicked": false
   },
   {
     "id": 8,
-    "image": "mooninites.jpg"
+    "image": "mooninites.jpg",
+    "clicked": false
   },
   {
     "id": 9,
-    "image": "mothmonsterman.jpg"
+    "image": "mothmonsterman.jpg",
+    "clicked": false
   },
   {
     "id": 10,
-    "image": "oglethorpe.jpg"
+    "image": "oglethorpe.jpg",
+    "clicked": false
   },
   {
     "id": 11,
-    "image": "steve.jpg"
+    "image": "steve.jpg",
+    "clicked": false
   },
   {
     "id": 12,
-    "image": "travis.jpg"
+    "image": "travis.jpg",
+    "clicked": false
   }
 ]

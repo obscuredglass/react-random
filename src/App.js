@@ -15,14 +15,52 @@ class App extends React.Component {
     score: 0
   };
 
+  handleCorrectGuess(newData) {
+    console.log("correct");
+
+    this.setState({
+      friends: newData,
+      score: this.state.score + 1
+    })
+  }
+
+  handleIncorrectGuess(newData) {
+    console.log("incorrect");
+    this.setState({
+      score: 0
+    })
+  }
+
   // when you click on a card they will be taken out of the array
-  setClicked = event => {
-    const currentFriends = this.state.alt;
+  setClicked = id => {
+    let guessedCorrectly = false;
+    const newData = 
+    this.state.friends.map(item => {
+      const newItem = {...item};
+      if(newItem.id === id) {
+        if(!newItem.clicked) {
+          newItem.clicked = true;
+          guessedCorrectly = true;
+        }
+      }
+      return newItem;
+    });
+    guessedCorrectly
+    ? this.handleCorrectGuess(newData)
+    :
+    this.handleIncorrectGuess(newData);
+
+
+
+    const currentFriends = id;
     const FriendsAlreadyClicked =
       this.state.clickedFriends.indexOf(currentFriends) > -1;
+
+      console.log(FriendsAlreadyClicked);
       
     
   // if you click on a character that has been already selected you lose
+
     if (FriendsAlreadyClicked) {
       this.setState({
         friends: this.state.friends.sort(function (a, b) {
@@ -65,7 +103,7 @@ class App extends React.Component {
   };
 
   render() {
-    console.log("error")
+    
     return (
       <div>
         <Navbar
