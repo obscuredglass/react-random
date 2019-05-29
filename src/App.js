@@ -1,7 +1,8 @@
+//imports dependencies and files
 import React from "react";
-import FriendCard from "./components/FriendCard";
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
+import FriendCard from "./components/FriendCard";
 import friends from "./aqua.json";
 import "./App.css";
 
@@ -14,11 +15,13 @@ class App extends React.Component {
     score: 0
   };
 
+  // when you click on a card they will be taken out of the array
   setClicked = event => {
     const currentFriends = this.state.alt;
     const FriendsAlreadyClicked =
       this.state.clickedFriends.indexOf(currentFriends) > -1;
-
+    
+  // if you click on a character that has been already selected you lose
     if (FriendsAlreadyClicked) {
       this.setState({
         friends: this.state.friends.sort(function (a, b) {
