@@ -20,6 +20,7 @@ class App extends React.Component {
     const currentFriends = this.state.alt;
     const FriendsAlreadyClicked =
       this.state.clickedFriends.indexOf(currentFriends) > -1;
+      
     
   // if you click on a character that has been already selected you lose
     if (FriendsAlreadyClicked) {
@@ -29,6 +30,7 @@ class App extends React.Component {
         }),
         clickedFriends: [],
         score: 0
+        
       });
       alert("You have lost the game. Dare you play again?")
     }
@@ -38,6 +40,7 @@ class App extends React.Component {
         {
           friends: this.state.friends.sort(function (a, b) {
             return 0.5 - Math.random();
+            
           }),
           clickedFriends: this.state.clickedFriends.concat(
             currentFriends
@@ -62,6 +65,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log("error")
     return (
       <div>
         <Navbar
@@ -71,7 +75,7 @@ class App extends React.Component {
         <div className="wrapper">
           {this.state.friends.map(friends => (
             <FriendCard
-              setClicked={friends.setClicked}
+              setClicked={this.setClicked}
               id={friends.id}
               key={friends.id}
               image={friends.image}
